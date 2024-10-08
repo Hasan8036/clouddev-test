@@ -30,6 +30,7 @@ app.delete('/todos/:id', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+app.listen(80, () => {
+    console.log('Server running on port 80');
+  });
+  
