@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 80; // EC2 instances will listen on port 80
 
 app.use(bodyParser.json());
 
@@ -29,8 +28,9 @@ app.delete('/todos/:id', (req, res) => {
     res.json({ message: `Todo with id ${todoId} deleted` });
 });
 
-// Start the server
-app.listen(80, () => {
-    console.log('Server running on port 80');
-  });
+const PORT = process.env.PORT || 3000; // Change to 3000 or another port
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
   
